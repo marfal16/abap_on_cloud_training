@@ -1,0 +1,5 @@
+CLASS zbp_r_biglietto_fm DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_biglietto_fm.
+ENDCLASS.
+
+CLASS zbp_r_biglietto_fm IMPLEMENTATION.
+ENDCLASS.

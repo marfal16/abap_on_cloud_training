@@ -1,0 +1,4 @@
+@EndUserText.label: 'Servizio Biglietto'
+define service ZUI_BIGLIETTO_FM_SRV_V2 {
+  expose ZC_BIGLIETTO_FM;
+}

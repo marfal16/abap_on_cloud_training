@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+annotate view ZC_BIGLIETTO_FM with
+{
+  @UI.selectionField: [{  //cambia l'ordinamento dei filtri in alto
+      position: 10
+  }]
+  @UI.lineItem: [{        //cambia l'ordinamento della tabella sotto
+      position: 10        //e lo fa vedere in automatico quando apri l'app
+  }]
+  IdBiglietto;
+
+  @UI.selectionField: [{
+      position: 20
+  }]
+  @UI.lineItem: [{
+      position: 20
+  }]
+  CreatoDa;
+
+  @UI.selectionField: [{
+      position: 30
+  }]
+  @UI.lineItem: [{
+      position: 30
+  }]
+  CreatoA;
+
+  @UI.selectionField: [{
+      position: 40
+  }]
+  @UI.lineItem: [{
+      position: 40
+  }]
+  ModificatoDa;
+
+  @UI.selectionField: [{
+      position: 50
+  }]
+  @UI.lineItem: [{
+      position: 50
+  }]
+  ModificatoA;
+
+  @UI.selectionField: [{
+      position: 60
+  }]
+  @UI.lineItem: [{
+      position: 60
+  }]
+  Modificato;
+}

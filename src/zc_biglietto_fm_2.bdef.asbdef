@@ -1,5 +1,6 @@
 projection implementation in class ZBP_C_BIGLIETTO_FM_2 unique;
 strict ( 2 );
+//strict;
 extensible;
 use draft;
 use side effects;

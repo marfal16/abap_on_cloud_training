@@ -10,7 +10,9 @@ etag master ModificatoA //vede la versione più aggiornata
   create ( authorization : global );
   update;
   delete;
-  field ( readonly ) IdBiglietto;
+  // field ( readonly ) IdBiglietto;
+   field ( mandatory : create ) IdBiglietto;
+   field ( readonly: update ) IdBiglietto;
 
   mapping for zbiglietto_nn_fm //ogni campo della tab. zbiglietto_nn_fm (dx) al campo CDS (sx)
 {

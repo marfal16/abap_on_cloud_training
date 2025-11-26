@@ -1,12 +1,40 @@
 @Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Biglietto',
+    typeNamePlural: 'Biglietti',
+    title: {
+        type: #STANDARD,
+        label: 'X',
+        value: 'CreatoDa'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'CreatoA'
+    }
+}
+
 annotate view ZC_BIGLIETTO_FM with
 {
+  @EndUserText: {
+      label: 'ID Biglietto',
+      quickInfo: 'ID Biglietto Info'
+  }
+  @UI.facet: [{
+      id: 'GeneralInfo',
+      position: 10,
+      purpose: #STANDARD,
+      label: 'General Information',
+      type: #IDENTIFICATION_REFERENCE
+  }]
+  @UI.identification: [{
+      position: 10
+  }]
   @UI.selectionField: [{  //cambia l'ordinamento dei filtri in alto
       position: 10
   }]
   @UI.lineItem: [{        //cambia l'ordinamento della tabella sotto
       position: 10        //e lo fa vedere in automatico quando apri l'app
-  }]
+    }]
   IdBiglietto;
 
   @UI.selectionField: [{

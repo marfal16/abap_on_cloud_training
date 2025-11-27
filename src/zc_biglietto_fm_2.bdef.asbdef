@@ -10,12 +10,15 @@ use etag
 {
   use create;
   use update;
-  use delete;
+//  use delete; --> cancello azione cancellazione standard
 
   use action Edit;
   use action Activate;
   use action Discard;
   use action Resume;
   use action Prepare;
+  use action CustomDelete;
+
+  use function GetDefaultsForCreate;
 
 }

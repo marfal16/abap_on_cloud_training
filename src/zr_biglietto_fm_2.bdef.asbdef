@@ -4,29 +4,30 @@ strict ( 2 );
 with draft;
 extensible;
 define behavior for ZR_BIGLIETTO_FM_2 alias Biglietto
-persistent table ZBIGLIETTO_FM_2
+persistent table zbiglietto_fm_2
 extensible
-draft table ZBGLIETTO_FM_2_D
+draft table zbglietto_fm_2_d
 etag master Locallastchanged
 lock master total etag ModificatoA
-authorization master( global )
+authorization master ( global )
 early numbering
 {
- // field ( mandatory : create )
+  // field ( mandatory : create )
   // IdBiglietto;
+  field ( features : instance ) Stato;
 
   field ( readonly )
-   CreatoDa,
-   CreatoA,
-   ModificatoDa,
-   ModificatoA,
-   Locallastchanged;
+  CreatoDa,
+  CreatoA,
+  ModificatoDa,
+  ModificatoA,
+  Locallastchanged;
 
-   //field ( readonly : update )
-   field ( readonly ) IdBiglietto;
+  //field ( readonly : update )
+  field ( readonly ) IdBiglietto;
 
 
-  create;
+  create { default function GetDefaultsForCreate; }
   update;
   delete;
 
@@ -34,16 +35,26 @@ early numbering
   draft action Discard;
   draft action Edit;
   draft action Resume;
-  draft determine action Prepare;
+  draft determine action Prepare { validation CheckStatus; }
 
-  mapping for ZBIGLIETTO_FM_2 corresponding extensible
+  action ( features : instance ) CustomDelete result [1] $self ;
+
+  determination onSave on save { create; }
+
+  validation CheckStatus on save
   {
-    IdBiglietto = id_biglietto;
-    CreatoDa = creato_da;
-    CreatoA = creato_a;
-    ModificatoDa = modificato_da;
-    ModificatoA = modificato_a;
-    Locallastchanged = locallastchanged;
+    field Stato;
   }
+
+  mapping for zbiglietto_fm_2 corresponding extensible
+    {
+      IdBiglietto      = id_biglietto;
+      Stato            = stato;
+      CreatoDa         = creato_da;
+      CreatoA          = creato_a;
+      ModificatoDa     = modificato_da;
+      ModificatoA      = modificato_a;
+      Locallastchanged = locallastchanged;
+    }
 
 }

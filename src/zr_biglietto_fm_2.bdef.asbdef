@@ -37,7 +37,7 @@ early numbering
   draft action Resume;
   draft determine action Prepare { validation CheckStatus; }
 
-  action ( features : instance ) CustomDelete result [1] $self ;
+  action ( features : instance ) CustomDelete result [1] $self;
 
   determination onSave on save { create; }
 
@@ -57,4 +57,49 @@ early numbering
       Locallastchanged = locallastchanged;
     }
 
+
+  association _Componenti { create; with draft; }
+
+
+}
+
+define behavior for ZR_COMPONENTI_FM alias Componenti
+persistent table ZCOMPONENTI_FM
+extensible
+draft table ZCOMPONENTI_FM_D
+etag dependent
+lock dependent
+authorization master( global )
+{
+  field ( mandatory : create )
+ //  IdBiglietto,
+   Progressivo;
+
+  field ( readonly )
+   IdBiglietto,
+   CreatoDa,
+   CreatoA,
+   ModificatoDa,
+   ModificatoA;
+ //  Locallastchanged;
+
+  field ( readonly : update )
+  // IdBiglietto,
+   Progressivo;
+
+  update;
+  delete;
+
+  mapping for ZCOMPONENTI_FM corresponding extensible
+  {
+    IdBiglietto = id_biglietto;
+    Progressivo = progressivo;
+    TipoUtente = tipo_utente;
+    CreatoDa = creato_da;
+    CreatoA = creato_a;
+    ModificatoDa = modificato_da;
+    ModificatoA = modificato_a;
+   // Locallastchanged = locallastchanged;
+  }
+  association _Biglietto {  with draft; }
 }

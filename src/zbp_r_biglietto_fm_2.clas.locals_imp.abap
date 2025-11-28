@@ -1,3 +1,19 @@
+CLASS lhc_componenti DEFINITION INHERITING FROM cl_abap_behavior_handler.
+
+  PRIVATE SECTION.
+
+    METHODS get_global_authorizations FOR GLOBAL AUTHORIZATION
+      IMPORTING REQUEST requested_authorizations FOR Componenti RESULT result.
+
+ENDCLASS.
+
+CLASS lhc_componenti IMPLEMENTATION.
+
+  METHOD get_global_authorizations.
+  ENDMETHOD.
+
+ENDCLASS.
+
 CLASS lhc_zr_biglietto_fm_2 DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
     METHODS:

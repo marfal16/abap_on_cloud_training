@@ -4,6 +4,7 @@
 @EndUserText.label: '###GENERATED Core Data Service Entity'
 define root view entity ZR_BIGLIETTO_FM_2
   as select from zbiglietto_fm_2 as Biglietto
+  composition [0..*] of ZR_COMPONENTI_FM as _Componenti
 {
   key id_biglietto as IdBiglietto,
   stato as Stato,
@@ -16,5 +17,9 @@ define root view entity ZR_BIGLIETTO_FM_2
   @Semantics.systemDateTime.lastChangedAt: true
   modificato_a as ModificatoA,
   @Semantics.systemDateTime.localInstanceLastChangedAt: true
-  locallastchanged as Locallastchanged
+  locallastchanged as Locallastchanged,
+  
+  //Association
+  _Componenti
+  
 }

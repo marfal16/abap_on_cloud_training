@@ -12,7 +12,16 @@ annotate view ZC_BIGLIETTO_FM_2 with
     purpose: #STANDARD,
     position: 10 ,
     type: #IDENTIFICATION_REFERENCE
-  } ]
+  },
+  {
+    label: 'Componenti',
+    id: 'Componenti',
+    purpose: #STANDARD,
+    position: 20 ,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '_Componenti'
+  }
+  ]
   @UI.identification: [ {
     position: 10 ,
     label: 'IdBiglietto'

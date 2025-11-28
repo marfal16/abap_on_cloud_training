@@ -35,5 +35,6 @@ define root view entity ZC_BIGLIETTO_FM_2
         systemDateTime.localInstanceLastChangedAt: true
       }
       Locallastchanged,
-      _BaseEntity
+      _BaseEntity,
+      _Componenti : redirected to composition child ZC_COMPONENTI_FM
 }
